@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.launch.GetUserDetailsFragment">
+
+    <ImageView
+        android:id="@+id/detailsBackIV"
+        android:layout_width="@dimen/margin_24x"
+        android:layout_height="@dimen/margin_24x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:src="@drawable/back"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/idCardHeaderTV"
+        style="@style/TextView.Headline6.Lexend.SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/id_card"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/detailsBackIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/detailsBackIV" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsBackIV">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/idHeaderTV"
+                style="@style/TextView.Headline6.Lexend.SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/margin_4x"
+                android:text="@string/thank_you_for_registering"
+                android:textColor="@color/textBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/idTitleTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4x"
+                android:gravity="center"
+                android:padding="@dimen/margin_4x"
+                android:text="@string/we_ve_generated_an_identity_card_for_you_with_the_details_provided_by_you"
+                android:textColor="@color/textGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idHeaderTV" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/idCardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_16x"
+                app:layout_constraintBottom_toTopOf="@id/nextBT"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idTitleTV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/idView"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_100x"
+                        android:background="@color/textBlue"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/logoIV"
+                        android:layout_width="64dp"
+                        android:layout_height="@dimen/margin_64x"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:src="@drawable/janataalogo"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/casteLogoIV"
+                        android:layout_width="@dimen/margin_64x"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_height="@dimen/margin_64x"
+                        app:layout_constraintStart_toEndOf="@+id/logoIV"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/idProfileCL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_40x"
+                        android:layout_marginEnd="@dimen/margin_8x"
+                        android:background="@drawable/circlebg"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/identityCardIV"
+                            android:layout_width="@dimen/height_110x"
+                            android:layout_height="@dimen/height_110x"
+                            android:layout_margin="@dimen/padding_8x"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/identityCardTagTV"
+                        style="@style/TextView.Body2.Lexend.SemiBold"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/size_40"
+                        android:gravity="start"
+                        android:padding="@dimen/margin_4x"
+                        android:text="@string/identity_card"
+                        android:textColor="@color/textGreen"
+                        app:layout_constraintEnd_toStartOf="@+id/idProfileCL"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/idView" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/registrationNumberCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/identityCardTagTV">
+
+                        <TextView
+                            android:id="@+id/registrationNumberTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/registration_number"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@id/registrationNumberTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/registrationNumberTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8x"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/registrationNumberTagTV"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/registrationNameCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/registrationNumberCL">
+
+                        <TextView
+                            android:id="@+id/registrationNameTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/name"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@id/registrationNameTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/registrationNameTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8x"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/registrationNameTagTV"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/casteCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/registrationNameCL">
+
+                        <TextView
+                            android:id="@+id/casteTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/caste"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@+id/registerCasteTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <TextView
+                                android:id="@+id/registerCasteTV"
+                                style="@style/TextView.Body1.Lexend.Medium"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/margin_8x"
+                                android:gravity="start"
+                                android:padding="@dimen/margin_4x"
+                                android:textColor="@color/textBlack"
+                                app:layout_constraintStart_toEndOf="@id/casteTagTV"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/MobileCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/casteCL">
+
+                        <TextView
+                            android:id="@+id/mobileTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/mobile"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@id/mobileTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/mobileTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8x"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/mobileTagTV"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bloodGroupCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/MobileCL">
+
+                        <TextView
+                            android:id="@+id/bloodGroupTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/blood_group"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@id/bloodGroupTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/bloodGroupTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8x"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/bloodGroupTagTV"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/addressCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/padding_16x"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bloodGroupCL">
+
+                        <TextView
+                            android:id="@+id/addressTagTV"
+                            style="@style/TextView.Body2.Lexend.Regular"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:text="@string/address"
+                            android:textColor="@color/hintBlack"
+                            app:layout_constraintEnd_toStartOf="@id/addressTV"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/addressTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8x"
+                            android:gravity="start"
+                            android:padding="@dimen/margin_4x"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/addressTagTV"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/idHintTagTV"
+                        style="@style/TextView.Caption.Lexend.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/padding_16x"
+                        android:gravity="center"
+                        android:padding="@dimen/margin_4x"
+                        android:text="@string/id_hint"
+                        android:textColor="@color/textGrey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/addressCL" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextBT"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:layout_marginBottom="@dimen/padding_16x"
+                android:padding="@dimen/padding_12x"
+                android:text="@string/next"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/idCardView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

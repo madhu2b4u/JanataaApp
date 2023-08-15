@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/onSecondary">
+
+    <ImageView
+        android:id="@+id/mViewBackIV"
+        android:layout_width="@dimen/margin_32x"
+        android:layout_height="@dimen/margin_32x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/margin_32x"
+        android:background="@drawable/corner_fill_bg"
+        android:backgroundTint="@color/textGrey"
+        android:padding="@dimen/margin_6x"
+        android:elevation="@dimen/margin_2x"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent">
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/imgRecV"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"/>
+
+       </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

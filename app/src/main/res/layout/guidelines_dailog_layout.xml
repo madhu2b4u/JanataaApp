@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/padding_12x">
+
+
+    <ImageView
+        android:id="@+id/errorWarningIV"
+        android:layout_width="@dimen/margin_56x"
+        android:layout_height="@dimen/margin_56x"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:src="@drawable/error_warning"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/closeIV"
+        android:layout_width="@dimen/margin_24x"
+        android:layout_height="@dimen/margin_24x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:layout_marginEnd="@dimen/padding_16x"
+        android:src="@drawable/close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/guideLineTitleTV"
+        style="@style/TextView.Headline6.Lexend.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:layout_marginBottom="@dimen/padding_16x"
+        android:gravity="center"
+        android:textColor="@color/textBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/errorWarningIV" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/guideLinesRV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/agreeAndContinueBT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLineTitleTV" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/agreeAndContinueBT"
+        style="@style/TextView.Body2.Lexend.Medium"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8x"
+        android:text="@string/agree_amp_continue"
+        app:layout_constraintBottom_toTopOf="@id/disAgreeCL"
+        android:padding="@dimen/padding_12x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideLinesRV" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/disAgreeCL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8x"
+        android:background="@drawable/corner_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="@dimen/padding_12x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/agreeAndContinueBT">
+
+        <TextView
+            android:id="@+id/disagreeTV"
+            style="@style/TextView.Body2.Lexend.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/i_disagree"
+            android:textColor="@color/textBlack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

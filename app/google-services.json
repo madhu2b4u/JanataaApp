@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "1046853201646",
+    "firebase_url": "https://janataaapp-default-rtdb.firebaseio.com",
+    "project_id": "janataaapp",
+    "storage_bucket": "janataaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046853201646:android:90ad63d7843bcb153d8dff",
+        "android_client_info": {
+          "package_name": "com.malkinfo.janataaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1046853201646-5p9f44uol54nua9p24bpp1k2eqpt4h6m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.malkinfo.janataaapp",
+            "certificate_hash": "3d4e0c13adb5fa1100f5027bc6cd83518e75e8cc"
+          }
+        },
+        {
+          "client_id": "1046853201646-n42mt6dpdhc0tiud2ammfj9v566nefr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.malkinfo.janataaapp",
+            "certificate_hash": "bdc0367134cfafb30896f7c72bfd0b3820236e8a"
+          }
+        },
+        {
+          "client_id": "1046853201646-dhibvqa8fnha4j70p5rntfabcl5khlp6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB-7NHCtkCg96OBuhf0SjEk5AAzM2uqL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1046853201646-dhibvqa8fnha4j70p5rntfabcl5khlp6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

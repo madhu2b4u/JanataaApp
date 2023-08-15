@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".views.main.Profile.EditPartnerPreferenceFragment">
+
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="@dimen/margin_24x"
+        android:layout_height="@dimen/margin_24x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/partnerPreferencesTV"
+        style="@style/TextView.Headline6.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:layout_marginEnd="@dimen/margin_4x"
+        android:text="@string/edit_partner_preferences"
+        android:textColor="@color/textBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/backIV"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_16x"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/partnerPreferencesTV">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/basicPreferenceTV"
+                style="@style/TextView.Headline6.Lexend.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_4x"
+                android:text="@string/basic_preferences"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partnerAgeHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/age"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/basicPreferenceTV" />
+
+            <Spinner
+                android:id="@+id/partnerAgeSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerAgeHintTV" />
+
+            <TextView
+                android:id="@+id/partnerMaritalStatusHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/marital_status"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerAgeSP" />
+
+            <Spinner
+                android:id="@+id/partnerMaritalStatusSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerMaritalStatusHintTV" />
+
+            <TextView
+                android:id="@+id/partnerPhysicalStatusHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/physical_status"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerMaritalStatusSP" />
+
+            <Spinner
+                android:id="@+id/partnerPhysicalStatusSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerPhysicalStatusHintTV" />
+
+
+            <TextView
+                android:id="@+id/partnerMotherTongueHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/mother_tongue"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerPhysicalStatusSP" />
+
+            <Spinner
+                android:id="@+id/partnerMotherTongueSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerMotherTongueHintTV" />
+
+
+            <TextView
+                android:id="@+id/partnerStarHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/star"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerMotherTongueSP" />
+
+            <Spinner
+                android:id="@+id/partnerStarSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerStarHintTV" />
+
+
+            <TextView
+                android:id="@+id/partnerCountryLivingInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/country_living_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerStarSP" />
+
+            <Spinner
+                android:id="@+id/partnerCountryLivingInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerCountryLivingInHintTV" />
+
+            <TextView
+                android:id="@+id/partnerStateLivingInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/state_living_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerCountryLivingInSP" />
+
+            <Spinner
+                android:id="@+id/partnerStateLivingInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerStateLivingInHintTV" />
+
+
+            <TextView
+                android:id="@+id/partnerEducationHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/education"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerStateLivingInSP" />
+
+            <Spinner
+                android:id="@+id/partnerEducationSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerEducationHintTV" />
+
+
+            <TextView
+                android:id="@+id/partnerEmployedInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/employed_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerEducationSP" />
+
+            <Spinner
+                android:id="@+id/partnerEmployedInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerEmployedInHintTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/annualIncomeTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/annual_income"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerEmployedInSP">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/partnerAnnualIncomeED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/heightTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/height_in_cm"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/annualIncomeTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/partnerHeightED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/saveDetailsBT"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginBottom="@dimen/size_40"
+                android:padding="@dimen/padding_16x"
+                android:text="@string/save_amp_continue"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/heightTL" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

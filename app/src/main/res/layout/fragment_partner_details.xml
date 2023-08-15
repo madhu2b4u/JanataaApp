@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:id="@+id/partnerDetailsCL"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".views.main.matrimony.PartnerDetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsingToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/partnerProfileImageVP"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_300x"
+                android:background="@color/grey"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
+
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/actionBackIV"
+                        android:layout_width="@dimen/size_30"
+                        android:layout_height="@dimen/size_30"
+                        android:padding="@dimen/padding_2x"
+                        android:src="@drawable/back"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+
+                    <CheckBox
+                        android:id="@+id/shortlistIV"
+                        android:layout_width="@dimen/size_30"
+                        android:layout_height="@dimen/size_30"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        android:background="@drawable/star_selector"
+                        android:button="@null"
+                        android:clickable="false"
+                        android:padding="@dimen/padding_2x"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/callIV"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/callIV"
+                        android:layout_width="@dimen/size_30"
+                        android:layout_height="@dimen/size_30"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        android:padding="@dimen/padding_2x"
+                        android:src="@drawable/phone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/moreOptionsIV"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+
+                    <ImageView
+                        android:id="@+id/moreOptionsIV"
+                        android:layout_width="@dimen/size_30"
+                        android:layout_height="@dimen/size_30"
+                        android:layout_marginEnd="@dimen/padding_16x"
+                        android:padding="@dimen/padding_2x"
+                        android:src="@drawable/more_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+                android:id="@+id/dots_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="@dimen/size_20"
+                app:dampingRatio="0.8"
+                app:dotsColor="@color/white"
+                app:dotsSize="@dimen/margin_8x"
+                app:dotsSpacing="@dimen/margin_4x"
+                app:dotsStrokeColor="@color/white"
+                app:dotsStrokeWidth="@dimen/margin_1x"
+                app:stiffness="300" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/chatIV"
+                android:layout_width="@dimen/size_40"
+                android:layout_height="@dimen/size_40"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:src="@drawable/blue_chat"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partnerNameTV"
+                style="@style/TextView.Body1.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/size_35"
+                android:text="Username"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/partnerIdTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_2x"
+                android:text="U12345670"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/partnerNameTV" />
+
+            <TextView
+                android:id="@+id/partnerDetailsTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_8x"
+                android:text="## yrs, 5'0'',Religion Type, \nCaste name, \nEducation, \nProfession, \nState name"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/partnerIdTV" />
+
+            <TextView
+                android:id="@+id/aboutPartnerTV"
+                style="@style/TextView.Body1.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_24x"
+                android:text="About Username"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/partnerDetailsTV" />
+
+            <ImageView
+                android:id="@+id/aboutIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/size_20"
+                android:src="@drawable/edit_pencil"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutPartnerTV" />
+
+            <TextView
+                android:id="@+id/aboutTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/aboutPartnerTV" />
+
+            <ImageView
+                android:id="@+id/profileIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/user_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutTV" />
+
+            <TextView
+                android:id="@+id/aboutPartnerDetailsTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="## years and # months, 5'00'', 55Kg, Average Build"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/aboutTV" />
+
+            <ImageView
+                android:id="@+id/calendarIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/calendar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutPartnerDetailsTV" />
+
+            <TextView
+                android:id="@+id/dobTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/aboutPartnerDetailsTV" />
+
+            <ImageView
+                android:id="@+id/maritalStatusIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/marital_status"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dobTV" />
+
+            <TextView
+                android:id="@+id/maritalStatusTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="Never married"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/dobTV" />
+
+            <ImageView
+                android:id="@+id/languageIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/language"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maritalStatusTV" />
+
+            <TextView
+                android:id="@+id/languageTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="Tamil"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/maritalStatusTV" />
+
+            <ImageView
+                android:id="@+id/locationIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/partner_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/languageTV" />
+
+            <TextView
+                android:id="@+id/locationTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/languageTV" />
+
+
+            <ImageView
+                android:id="@+id/phoneIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/call"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationTV"
+                app:tint="@color/textGrey" />
+
+            <TextView
+                android:id="@+id/phoneNumberTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="+91xxxxxxxxxx"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/locationTV" />
+            <TextView
+                android:id="@+id/aboutProfessionalDetailsTV"
+                style="@style/TextView.Body1.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_32x"
+                android:text="Professional Details"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phoneNumberTV" />
+
+            <ImageView
+                android:id="@+id/educationalPlaceIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/educational_place"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutProfessionalDetailsTV" />
+
+            <TextView
+                android:id="@+id/educationalPlaceTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/aboutProfessionalDetailsTV" />
+
+
+            <ImageView
+                android:id="@+id/professionIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/professional_breifcase"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/educationalPlaceTV" />
+
+            <TextView
+                android:id="@+id/professionTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/educationalPlaceTV" />
+
+            <ImageView
+                android:id="@+id/incomeIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/rupee"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/professionTV" />
+
+            <TextView
+                android:id="@+id/annualIncomeTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/professionTV" />
+
+            <ImageView
+                android:id="@+id/qualificationIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/qualification"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/annualIncomeTV" />
+
+            <TextView
+                android:id="@+id/qualificationTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/annualIncomeTV" />
+
+            <TextView
+                android:id="@+id/religiousBackgroundTV"
+                style="@style/TextView.Body1.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_32x"
+                android:text="Religious Background"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/qualificationTV" />
+
+
+
+            <ImageView
+                android:id="@+id/starIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/shortlist_star"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/religiousBackgroundTV" />
+
+            <TextView
+                android:id="@+id/starTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/religiousBackgroundTV" />
+
+            <ImageView
+                android:id="@+id/horoScopeIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/horoscope"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starTV" />
+
+            <TextView
+                android:id="@+id/horoScopeTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/starTV" />
+
+            <TextView
+                android:id="@+id/aboutFamilyTV"
+                style="@style/TextView.Body1.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/margin_32x"
+                android:text="About Family"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horoScopeTV" />
+
+            <ImageView
+                android:id="@+id/familyTypeIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/family_three"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutFamilyTV" />
+
+            <TextView
+                android:id="@+id/familyTypeTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="Nuclear Middle Class Family with Liberal Values"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/aboutFamilyTV" />
+
+            <ImageView
+                android:id="@+id/familyMembersIV"
+                android:layout_width="@dimen/margin_14x"
+                android:layout_height="@dimen/margin_14x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_18x"
+                android:src="@drawable/family_two"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/familyTypeTV" />
+
+            <TextView
+                android:id="@+id/familyMembersTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="Father retired, Mother housemaker"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/aboutIV"
+                app:layout_constraintTop_toBottomOf="@id/familyTypeTV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileRecommendationCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_32x"
+                android:background="@color/lightWhite"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/familyMembersTV">
+
+                <TextView
+                    android:id="@+id/profileRecommendationTV"
+                    style="@style/TextView.Body2.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/profiles_recommendation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/profileRecommendationRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_12x"
+                    android:layout_marginBottom="@dimen/padding_16x"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profileRecommendationTV" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

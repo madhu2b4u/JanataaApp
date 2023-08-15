@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addMoreMediaCV"
+        android:layout_width="@dimen/height_200x"
+        android:layout_height="@dimen/height_200x"
+        android:layout_margin="@dimen/margin_6x"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="@dimen/padding_4x"
+        android:backgroundTint="@color/lightGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:drawablePadding="@dimen/padding_4x"
+            android:id="@+id/addMoreMediaTV"
+            style="@style/TextView.Body2.Lexend.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableTop="@drawable/add"
+            android:text="@string/add_more_media"
+            android:textColor="@color/hintGrey" />
+
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

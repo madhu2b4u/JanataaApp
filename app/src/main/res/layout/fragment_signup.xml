@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.launch.SignUpFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileImageCL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/width_200x"
+                android:background="@color/textBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/signUpTitleTV"
+                    style="@style/TextView.Headline6.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_20"
+                    android:text="@string/sign_up"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileIV"
+                    android:layout_width="@dimen/height_120x"
+                    android:layout_height="@dimen/height_120x"
+                    android:src="@drawable/profile_round"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/signUpTitleTV" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/uploadPhotoCL"
+                    android:layout_width="@dimen/size_40"
+                    android:layout_height="@dimen/size_40"
+                    android:layout_marginTop="@dimen/margin_8x"
+                    android:background="@drawable/circlebg"
+                    android:backgroundTint="@color/textGrey"
+                    app:layout_constraintBottom_toBottomOf="@id/profileIV"
+                    app:layout_constraintEnd_toEndOf="@id/profileIV">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/camera"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/aadharNumberTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/aadhar_number"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/profileImageCL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aadharNumberET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fullNameTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/full_name"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aadharNumberTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullNameET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parentNameTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/mother_father_name"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fullNameTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/parentNameET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/countryHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/country"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parentNameTL" />
+
+            <Spinner
+                android:id="@+id/countrySP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/countryHintTV" />
+
+            <TextView
+                android:id="@+id/stateHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/state"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/countrySP" />
+
+            <Spinner
+                android:id="@+id/signUpStateSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/stateHintTV" />
+
+            <TextView
+                android:id="@+id/districtHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/district"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/signUpStateSP" />
+
+            <Spinner
+                android:id="@+id/districtSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/districtHintTV" />
+
+            <TextView
+                android:id="@+id/mandalHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/Mandal"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/districtSP" />
+
+            <Spinner
+                android:id="@+id/signUpMandalSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mandalHintTV" />
+
+            <TextView
+                android:id="@+id/tahsilVillageHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/tahsil_village"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/signUpMandalSP" />
+
+            <Spinner
+                android:id="@+id/tahsilVillageSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tahsilVillageHintTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/addressTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/address"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tahsilVillageSP">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/pincodeTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/pincode"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addressTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/pincodeET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dobTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:hint="@string/dob"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pincodeTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dobET"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:singleLine="true"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/bloodGroupHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/blood_group"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dobTL" />
+
+            <Spinner
+                android:id="@+id/bloodGroupSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bloodGroupHintTV" />
+
+            <TextView
+                android:id="@+id/maritalStatusHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/marital_status"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bloodGroupSP" />
+
+            <Spinner
+                android:id="@+id/maritalStatusSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maritalStatusHintTV" />
+
+
+            <TextView
+                android:id="@+id/employmentStateHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/employment_state"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maritalStatusSP" />
+
+            <Spinner
+                android:id="@+id/employmentStateSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employmentStateHintTV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/workCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employmentStateSP">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/privateWorkTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:hint="@string/if_private_mention_work"
+                    android:visibility="gone"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/privateWorkET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/otherWorkTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:hint="@string/mention_other_work"
+                    android:visibility="gone"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/otherWorkET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/casteHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/caste"
+                android:textAllCaps="true"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/workCL" />
+
+            <TextView
+                android:id="@+id/casteTV"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:background="@drawable/spinner_bg"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/casteHintTV" />
+
+            <TextView
+                android:id="@+id/genderHintTV"
+                style="@style/TextView.Caption.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/gender"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/casteTV" />
+
+
+            <RadioButton
+                android:id="@+id/maleRB"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:checked="false"
+                android:text="@string/male"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/genderHintTV" />
+
+            <RadioButton
+                android:id="@+id/femaleRB"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:text="@string/female"
+                app:layout_constraintStart_toEndOf="@id/maleRB"
+                app:layout_constraintTop_toBottomOf="@id/genderHintTV" />
+
+            <TextView
+                android:id="@+id/identityCardTV"
+                style="@style/TextView.Caption.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/identity_card"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/femaleRB" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/uploadAadharCardCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/identityCardTV">
+
+                <ImageView
+                    android:id="@+id/frontAadhaarCardIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_200x"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/frontAadharCL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8x"
+                    android:background="@drawable/corner_bg"
+                    android:padding="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/frontAadhaarCardIV">
+
+                    <TextView
+                        android:id="@+id/frontAadharCardTV"
+                        style="@style/TextView.Body2.Lexend.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/upload"
+                        android:text="@string/upload_front_aadhar_card"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textBlack"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <ImageView
+                    android:id="@+id/backAadhaarCardIV"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_200x"
+                    android:layout_marginTop="@dimen/margin_8x"
+                    android:scaleType="fitXY"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/frontAadharCL" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/backAadharCL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8x"
+                    android:background="@drawable/corner_bg"
+                    android:padding="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/backAadhaarCardIV">
+
+                    <TextView
+                        android:id="@+id/backAadharCardTV"
+                        style="@style/TextView.Body2.Lexend.Medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/upload"
+                        android:text="@string/upload_back_aadhar_card"
+                        android:textAllCaps="true"
+                        android:textColor="@color/textBlack"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:id="@+id/checkBoxLayoutLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadAadharCardCL">
+                <CheckBox
+                    android:id="@+id/termsAndConditionsCB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/privacyTermsTV"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:text="@string/i_accept_privacy_terms"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submitProfileBT"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:layout_marginBottom="@dimen/size_40"
+                android:alpha="0.5"
+                android:clickable="false"
+                android:padding="@dimen/padding_16x"
+                android:text="@string/submit"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/checkBoxLayoutLL" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

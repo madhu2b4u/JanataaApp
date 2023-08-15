@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/matrimonyFragment"
+        android:icon="@drawable/matrimony_selector"
+        android:title="@string/matrimony" />
+    <item
+        android:id="@+id/communityFragment"
+        android:icon="@drawable/chat_selector"
+        android:title="@string/community_chat" />
+
+    <item
+        android:id="@+id/bloodGroupFragment"
+        android:icon="@drawable/blood_group_selector"
+        android:title="@string/blood_group" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile_selector"
+        android:title="@string/profile" />
+</menu>

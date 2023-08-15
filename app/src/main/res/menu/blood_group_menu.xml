@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_a_positive"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/a_positive"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_a_negative"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/a_negative"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ab_positive"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/ab_positive"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ab_negative"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/ab_negative"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_o_positive"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/o_positive"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_o_neagtive"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/o_negative"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_b_positive"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/b_positive"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_b_negative"
+        android:checkable="true"
+        android:checked="false"
+        android:title="@string/b_negative"
+        app:showAsAction="never" />
+
+
+</menu>

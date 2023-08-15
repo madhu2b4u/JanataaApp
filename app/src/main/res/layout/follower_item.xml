@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_12x">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/followerProfileIV"
+        android:layout_width="48dp"
+        android:layout_height="@dimen/margin_48x"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+         />
+
+    <TextView
+        android:id="@+id/followerNameTV"
+        style="@style/TextView.Body2.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/padding_4x"
+        android:layout_marginEnd="@dimen/padding_4x"
+        android:layout_toStartOf="@id/viewFollowerProfile"
+        android:layout_toEndOf="@id/followerProfileIV"
+        android:textColor="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/viewFollowerProfile"
+        style="@style/TextView.Caption.Lexend.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/light_grey_stroke_bg"
+        android:paddingStart="@dimen/padding_27x"
+        android:paddingTop="@dimen/margin_8x"
+        android:paddingEnd="@dimen/padding_27x"
+        android:paddingBottom="@dimen/margin_8x"
+        android:text="@string/view"
+        android:textColor="@color/textGrey" />
+</RelativeLayout>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/gery_button"
+    android:layout_height="match_parent"
+    tools:context=".views.main.MatrimonyFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/matrimonyDetailsCL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/matrimonyHeaderCL"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_80x"
+            android:background="@drawable/toolbar_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/userProfileIV"
+                android:layout_width="@dimen/margin_48x"
+                android:layout_height="@dimen/margin_48x"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:src="@drawable/profile_iv"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/greetingsTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4x"
+                android:text="Hi!"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintStart_toEndOf="@id/userProfileIV"
+                app:layout_constraintTop_toTopOf="@id/userProfileIV" />
+
+            <TextView
+                android:id="@+id/userNameTV"
+                style="@style/TextView.Headline6.Lexend.SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_4x"
+                android:text="Username"
+                android:textColor="#3A4373"
+                android:layout_marginEnd="@dimen/margin_4x"
+                app:layout_constraintEnd_toStartOf="@id/matrimonyChatIV"
+                app:layout_constraintBottom_toBottomOf="@id/userProfileIV"
+                app:layout_constraintStart_toEndOf="@id/userProfileIV"
+                app:layout_constraintTop_toBottomOf="@id/greetingsTV" />
+
+            <ImageView
+                android:id="@+id/matrimonyChatIV"
+                android:layout_width="@dimen/margin_24x"
+                android:layout_height="@dimen/margin_24x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:src="@drawable/matrimony_chat"
+                app:tint="@color/colorAccent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/discoverMatchesCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/matrimonyHeaderCL">
+
+            <TextView
+                android:id="@+id/discoverMatchesTV"
+                style="@style/TextView.Body2.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="Discover Matches"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/matrimonyFilterCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_8x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/discoverMatchesTV">
+
+                <ImageView
+                    android:id="@+id/locationIV"
+                    android:layout_width="@dimen/width_70x"
+                    android:layout_height="@dimen/height_70x"
+                    android:src="@drawable/matrimony_location"
+                    app:layout_constraintBottom_toTopOf="@id/locationTV"
+                    app:layout_constraintEnd_toStartOf="@id/professionIV"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/locationTV"
+                    style="@style/TextView.Body2.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4x"
+                    android:text="@string/location"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/professionIV"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/locationIV" />
+
+                <ImageView
+                    android:id="@+id/professionIV"
+                    android:layout_width="@dimen/width_70x"
+                    android:layout_height="@dimen/height_70x"
+                    android:src="@drawable/matrimony_profession"
+                    app:layout_constraintBottom_toTopOf="@id/professionTV"
+                    app:layout_constraintEnd_toStartOf="@id/starIV"
+                    app:layout_constraintStart_toEndOf="@id/locationIV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/professionTV"
+                    style="@style/TextView.Body2.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4x"
+                    android:text="@string/profession"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/starIV"
+                    app:layout_constraintStart_toEndOf="@id/locationIV"
+                    app:layout_constraintTop_toBottomOf="@id/professionIV" />
+
+                <ImageView
+                    android:id="@+id/starIV"
+                    android:layout_width="@dimen/width_70x"
+                    android:layout_height="@dimen/height_70x"
+                    android:src="@drawable/matrimony_star"
+                    app:layout_constraintBottom_toTopOf="@id/starTV"
+                    app:layout_constraintEnd_toStartOf="@id/educationIV"
+                    app:layout_constraintStart_toEndOf="@id/professionIV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/starTV"
+                    style="@style/TextView.Body2.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4x"
+                    android:text="@string/star"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/educationIV"
+                    app:layout_constraintStart_toEndOf="@id/professionIV"
+                    app:layout_constraintTop_toBottomOf="@id/professionIV" />
+
+                <ImageView
+                    android:id="@+id/educationIV"
+                    android:layout_width="@dimen/width_70x"
+                    android:layout_height="@dimen/height_70x"
+                    android:src="@drawable/matrimony_education"
+                    app:layout_constraintBottom_toTopOf="@id/educationTV"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/starIV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/educationTV"
+                    style="@style/TextView.Body2.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_4x"
+                    android:text="@string/education"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/starIV"
+                    app:layout_constraintTop_toBottomOf="@id/educationIV" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/matrimonyRV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/padding_16x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/discoverMatchesCL" />
+
+        <TextView
+            android:id="@+id/noMatchFoundTV"
+            style="@style/TextView.Body2.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/discoverMatchesCL"
+            android:text="@string/no_match_found"
+            android:textColor="@color/textBlack"
+            android:visibility="gone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/matrimonyEnableLayout"
+        layout="@layout/feature_enable_layout"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.main.Profile.BlockedProfileFragment">
+
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="@dimen/margin_24x"
+        android:layout_height="@dimen/margin_24x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/blockedProfileHeaderTV"
+        style="@style/TextView.Headline6.Lexend.SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blocked_profiles"
+        android:textColor="@color/textBlack"
+        app:layout_constraintBottom_toBottomOf="@id/backIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backIV" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/blockedProfileRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/padding_16x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backIV" />
+
+
+    <TextView
+        android:id="@+id/noProfileFoundTV"
+        style="@style/TextView.Body2.Lexend.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_20"
+        android:text="@string/no_profile_found"
+        android:textColor="@color/textBlack"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backIV" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

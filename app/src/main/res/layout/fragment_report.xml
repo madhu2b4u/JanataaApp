@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.main.community.ReportFragment">
+
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="@dimen/margin_24x"
+        android:layout_height="@dimen/margin_24x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:src="@drawable/back"
+        app:tint="@color/textBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/profileNameTV"
+        style="@style/TextView.Headline6.Lexend.SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/report_post"
+        app:layout_constraintBottom_toBottomOf="@id/backIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/backIV" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_16x"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileNameTV">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/reportPostHintTV"
+                style="@style/TextView.Caption.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="@string/don_t_worry_you_are_safe_with_us_this_report_will_never_be_notified_to_the_concern_person_regarding_your_safety_this_report_will_be_anonymous"
+                android:textColor="@color/textGrey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/userIdTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/user_id"
+                app:hintTextAppearance="@style/ReportHintInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reportPostHintTV">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/reportReasonHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/reason"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userIdTL" />
+
+            <Spinner
+                android:id="@+id/reportReasonSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reportReasonHintTV" />
+
+            <TextView
+                android:id="@+id/commentsHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/comments"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reportReasonSP" />
+
+
+            <EditText
+                android:id="@+id/reportED"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_140"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:background="@drawable/light_grey_corner_bg"
+                android:gravity="start"
+                android:imeOptions="actionDone"
+                android:padding="@dimen/padding_12x"
+                android:inputType="text"
+                android:textColor="@color/textBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/commentsHintTV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/reportCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_40"
+                android:layout_marginBottom="@dimen/size_40"
+                android:background="@drawable/trans_croner_bg"
+                android:backgroundTint="@color/red"
+                android:padding="@dimen/padding_16x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reportED">
+
+                <TextView
+                    android:id="@+id/reportTV"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/report"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

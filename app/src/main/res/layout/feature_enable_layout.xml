@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/enableFeatureCL"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/enableIV"
+            android:layout_width="@dimen/width_70x"
+            android:layout_height="@dimen/height_70x"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/enableThisFeatureTV"
+            style="@style/TextView.Headline6.Lexend.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_24x"
+            android:text="@string/enable_this_feature"
+            android:textColor="@color/lightBlue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enableIV" />
+
+        <TextView
+            android:id="@+id/enableThisFeatureHintTV"
+            style="@style/TextView.Body2.Lexend.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16x"
+            android:layout_marginTop="@dimen/margin_24x"
+            android:layout_marginEnd="@dimen/padding_16x"
+            android:gravity="center"
+            android:textColor="@color/textGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enableThisFeatureTV" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/enableFeatureBT"
+            style="@style/TextView.Body2.Lexend.Medium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16x"
+            android:layout_marginTop="@dimen/margin_32x"
+            android:layout_marginEnd="@dimen/padding_16x"
+            android:layout_marginBottom="@dimen/padding_16x"
+            android:padding="@dimen/padding_16x"
+            android:text="@string/enable_feature"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/enableThisFeatureHintTV"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

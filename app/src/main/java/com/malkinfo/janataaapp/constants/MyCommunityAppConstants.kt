@@ -1,0 +1,63 @@
+package com.malkinfo.janataaapp.constants
+
+object MyCommunityAppConstants {
+
+     const val REQUEST_CODE = 1
+    val IMG_FILE = "IMG_FILE"
+    val FIRE_USER_DATA = "CommunityFireUser"
+    val StatuSeen = "StatusSeen"
+    val STATUS_STORY_GROUP_ID = "64376532c271443fb3d69b08"
+    val AD_SLIDER_BANNER_GROUP = "643765e0c271443fb3d69b09"
+    val IS_FROM_MATRIMONY_FILTER: String ="IS_FROM_MATRIMONY_FILTER"
+    val MSG_RECEIVER_ID: String ="MSG_RECEIVER_ID"
+    val MSG_RECEIVER_NAME: String ="MSG_RECEIVER_NAME"
+    val MSG_RECEIVER_PROFILE: String ="MSG_RECEIVER_PROFILE"
+    val OTP_ID: String ="OTP_ID"
+    val IS_GROUP_JOINED: String ="IS_GROUP_JOINED"
+    val MOBILE_NUMBER: String ="MOBILE_NUMBER"
+    val STOREDVERIFICATIONID = "STOREDVERIFICATIONID"
+    val IS_FROM_SIGN_UP: String = "IS_FROM_SIGN_UP"
+    val IS_MATRIMONY_FILTER_TYPE: String ="IS_MATRIMONY_FILTER_TYPE"
+    val PARTNER_ID: String ="PARTNER_ID"
+    val POST_ID: String = "POST_ID"
+    val POST_IMAGE_URL: String = "POST_IMAGE_URL"
+    val POST_DESCRIPTION: String = "POST_DESCRIPTION"
+    val GROUP_ID: String = "GROUP_ID"
+    val STORYIMGURL: String = "STORYIMGURL"
+    val GROUP_NAME: String = "GROUP_NAME"
+    val ABOUT_GROUP: String = "ABOUT_GROUP"
+    val GROUP_POST_ID: String = "GROUP_POST_ID"
+    val PROFILE_ID: String = "PROFILE_ID"
+    val IS_PARTNER_UPDATE: String = "IS_PARTNER_UPDATE"
+    val PROFILE_NAME: String = "PROFILE_NAME"
+    val USER_DATA: String = "USER_DATA"
+    val MATRIMONY_USER_DATA: String = "MATRIMONY_USER_DATA"
+    val PARTNER_PREFERENCE_DATA: String = "PARTNER_PREFERENCE_DATA"
+    val AUTH_TOKEN: String = "AUTH_TOKEN"
+    val REFRESH_TOKEN: String = "REFRESH_TOKEN"
+    val IS_EDIT: String = "IS_EDIT"
+    val IS_LOGGEDIN: String = "IS_LOGGEDIN"
+    val IS_EXISTING_USER: String = "IS_EXISTING_USER"
+    val IS_FEATURE_ENABLE_FINISHED: String = "IS_FEATURE_ENABLE_FINISHED"
+    val IS_SIGNUP: String = "IS_SIGNUP"
+    val IS_GROUP_MEMBERS: String = "IS_GROUPMEMBERS"
+    val IS_MATRIMONY_ENABLE: String = "IS_MATRIMONY_ENABLE"
+    val IS_MATRIMONY_REGISTERED_USER: String = "IS_MATRIMONY_REGISTERED_USER"
+    val IS_MATRIMONY_PARTNER_PREFERENCE_FINISHED: String = "IS_MATRIMONY_PARTNER_PREFERENCE_FINISHED"
+    val IS_BLOODGROUP_ENABLE: String = "IS_BLOODGROUP_ENABLE"
+    val IS_COMMUNITYGROUP_ENABLE: String = "IS_COMMUNITYGROUP_ENABLE"
+    val IS_MEET_GROUP_ENABLE: String = "IS_MEET_GROUP_ENABLE"
+    val SETTINGS_TITLE: String = "SETTINGS_TITLE"
+    val BLOOD_DONATION_ID: String = "60daea9073729712f088ae65"
+    val MATRIMONY_ID: String = "60daea8773729712f088ae63"
+    val COMMUNITY_CHAT_ID: String = "60daea7a73729712f088ae61"
+    val MEETING_ID: String = "MEETING_ID"
+
+    var ALLPOSTKEY = "AllPostKey"
+
+    const val VERIFYMOB  = "VerifyMobile"
+    var isVerify:Boolean = false
+    const val STORY_REQUEST_CODE = 1
+    const val DIR_ALL_IMAGE = "CommunityImage"
+
+}

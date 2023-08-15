@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.launch.SplashActivity">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/commun"
+       android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/wlecomTx"
+        android:text="Welcome"
+        android:textSize="15sp"
+        android:textColor="@color/semiDarkGreen"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/height_80x"
+        style="@style/TextView.Headline6.Lexend.SemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/appnTx"
+        android:layout_below="@id/wlecomTx"
+        android:text="@string/name_app"
+        android:textSize="35sp"
+        android:textColor="#055798"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        style="@style/TextView.Headline4.Lexend.SemiBold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/depsTx"
+        android:layout_below="@id/appnTx"
+        android:text="@string/connect_your_destination"
+        android:textColor="@color/textGrey"
+        android:textAlignment="center"
+        style="@style/TextView.Body2.Lexend.Regular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

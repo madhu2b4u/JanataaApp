@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/receiveMessageCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8x">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/partnerIV"
+            android:layout_width="@dimen/margin_32x"
+            android:layout_height="@dimen/margin_32x"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:src="@drawable/profile_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/receivedTimeTV"
+            style="@style/TextView.Caption.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:text="12th Jun, 4:12"
+            android:textColor="@color/textGrey"
+            app:layout_constraintBottom_toBottomOf="@id/partnerIV"
+            app:layout_constraintStart_toEndOf="@id/partnerIV"
+            app:layout_constraintTop_toTopOf="@id/partnerIV" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/partnerIV">
+
+            <TextView
+                android:id="@+id/receivedMsgTV"
+                style="@style/TextView.Caption.Lexend.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8x"
+                android:background="@drawable/received_msg_bg"
+                android:paddingStart="@dimen/padding_18x"
+                android:paddingTop="@dimen/size_20"
+                android:paddingEnd="@dimen/padding_18x"
+                android:paddingBottom="@dimen/size_20"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                android:textColor="@color/lightDarkGrey"
+                app:layout_constraintBottom_toTopOf="@id/receivedImageCV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/receivedImageCV"
+                style="@style/CustomCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/receivedMsgTV">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/receivedImageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8x" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sendMessageCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/receiveMessageCL"
+        android:layout_margin="@dimen/margin_8x">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userIV"
+            android:layout_width="@dimen/margin_32x"
+            android:layout_height="@dimen/margin_32x"
+            android:layout_marginEnd="@dimen/margin_8x"
+            android:src="@drawable/profile_iv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sendTimeTV"
+            style="@style/TextView.Caption.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_8x"
+            android:text="12th Jun, 4:12"
+            android:textColor="@color/textGrey"
+            app:layout_constraintBottom_toBottomOf="@id/userIV"
+            app:layout_constraintEnd_toStartOf="@id/userIV"
+            app:layout_constraintTop_toTopOf="@id/userIV" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/userIV">
+
+            <TextView
+                android:id="@+id/sendMsgTV"
+                style="@style/TextView.Caption.Lexend.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8x"
+                android:background="@drawable/send_msg_bg"
+                android:elevation="@dimen/margin_4x"
+                android:paddingStart="@dimen/padding_18x"
+                android:paddingTop="@dimen/size_20"
+                android:paddingEnd="@dimen/padding_18x"
+                android:paddingBottom="@dimen/size_20"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing."
+                android:textColor="@color/hintBlack"
+                app:layout_constraintBottom_toTopOf="@id/sendImageCV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/sendImageCV"
+                style="@style/CustomSendCardViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sendMsgTV">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/sendImageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8x" />
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

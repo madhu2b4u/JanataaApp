@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.main.matrimony.MessageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messageHeaderTV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_80x"
+        android:layout_alignParentTop="true"
+        android:elevation="@dimen/margin_2x">
+
+        <ImageView
+            android:id="@+id/mesageBackIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:layout_marginStart="@dimen/padding_16x"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/textBlack" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/messageProfileIV"
+            android:layout_width="@dimen/size_40"
+            android:layout_height="@dimen/size_40"
+            android:layout_marginStart="@dimen/padding_12x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@id/mesageBackIV"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/messageUserTV"
+            style="@style/TextView.Body2.Lexend.SemiBold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:layout_marginEnd="@dimen/margin_8x"
+            app:layout_constraintBottom_toBottomOf="@id/messageProfileIV"
+            app:layout_constraintEnd_toStartOf="@id/moreOptionsIV"
+            app:layout_constraintStart_toEndOf="@id/messageProfileIV"
+            app:layout_constraintTop_toTopOf="@id/messageProfileIV" />
+
+        <TextView
+            android:id="@+id/activeStatusTV"
+            style="@style/TextView.Caption.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:layout_marginEnd="@dimen/margin_8x"
+            android:text="Online"
+            android:textColor="@color/textGrey"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/messageProfileIV"
+            app:layout_constraintTop_toBottomOf="@id/messageUserTV" />
+
+        <ImageView
+            android:id="@+id/moreOptionsIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:layout_marginEnd="@dimen/padding_16x"
+            android:src="@drawable/more_vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/textBlack" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/messageListRV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/messageFooterCL"
+        android:layout_below="@id/messageHeaderTV"
+        android:background="@color/lightWhite" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/messageFooterCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chatImagesRV"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/writeMessageCL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/padding_16x"
+            android:layout_marginTop="@dimen/padding_16x"
+            android:layout_marginEnd="@dimen/margin_8x"
+            android:layout_marginBottom="@dimen/padding_16x"
+            android:background="@drawable/write_msg_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/sendIV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chatImagesRV">
+
+            <ImageView
+                android:id="@+id/attachIV"
+                android:layout_width="@dimen/margin_24x"
+                android:layout_height="@dimen/margin_24x"
+                android:layout_marginStart="@dimen/margin_8x"
+                android:src="@drawable/attach"
+                android:layout_marginTop="@dimen/padding_12x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/writeMessageED"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="start"
+                android:hint="@string/message_hint"
+                android:imeOptions="actionDone"
+                android:padding="@dimen/height_15x"
+                android:textColor="@color/textBlack"
+                android:textColorHint="@color/hintGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/voiceIV"
+                app:layout_constraintStart_toEndOf="@id/attachIV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/voiceIV"
+                android:layout_width="@dimen/margin_24x"
+                android:layout_height="@dimen/margin_24x"
+                android:layout_marginEnd="@dimen/margin_8x"
+                android:src="@drawable/mic"
+                android:layout_marginTop="@dimen/padding_12x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/sendIV"
+            android:layout_width="@dimen/margin_48x"
+            android:layout_height="@dimen/margin_48x"
+            android:layout_marginEnd="@dimen/padding_16x"
+            android:background="@drawable/circlebg"
+            android:backgroundTint="@color/semiBlue"
+            android:padding="@dimen/padding_12x"
+            android:src="@drawable/send"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chatImagesRV" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

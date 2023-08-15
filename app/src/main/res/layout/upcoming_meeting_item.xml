@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/upcomingMeetingCL"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/meetingCL"
+        android:layout_width="@dimen/height_220x"
+        android:layout_height="@dimen/height_220x"
+        android:layout_margin="@dimen/padding_8x"
+        android:padding="@dimen/padding_8x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/streamIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:src="@drawable/stream_black_24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/meetingDateTV"
+            style="@style/TextView.Headline4.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/meetingMonthTV"
+            style="@style/TextView.Body1.Lexend.Light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/meetingDateTV" />
+
+        <TextView
+            android:id="@+id/meetingTitleTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_12x"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/meetingMonthTV" />
+
+        <TextView
+            android:id="@+id/meetingStartTimeTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_8x"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/meetingTitleTV" />
+
+        <TextView
+            android:id="@+id/meetingToTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_2x"
+            android:layout_marginTop="@dimen/padding_8x"
+            android:text="-"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/meetingStartTimeTV"
+            app:layout_constraintTop_toBottomOf="@id/meetingTitleTV" />
+
+        <TextView
+            android:id="@+id/meetingEndTimeTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_8x"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@id/meetingToTV"
+            app:layout_constraintTop_toBottomOf="@id/meetingTitleTV" />
+
+        <TextView
+            android:id="@+id/joinMeetingTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_16x"
+            android:layout_marginBottom="@dimen/padding_16x"
+            android:background="@drawable/trans_croner_bg"
+            android:backgroundTint="@color/textGreen"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:paddingStart="@dimen/padding_16x"
+            android:paddingTop="@dimen/padding_8x"
+            android:paddingEnd="@dimen/padding_16x"
+            android:paddingBottom="@dimen/padding_8x"
+            android:text="@string/join"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/meetingMonthTV"
+            app:layout_constraintTop_toBottomOf="@id/meetingEndTimeTV" />
+
+        <TextView
+            android:id="@+id/joinedMeetingHintTV"
+            style="@style/TextView.Caption.Lexend.Regular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="*You can join once the meeting gets started by Admin"
+            android:textColor="@color/darkGreen"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/meetingEndTimeTV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

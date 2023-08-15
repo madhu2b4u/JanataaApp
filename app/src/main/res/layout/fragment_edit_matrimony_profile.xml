@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.main.Profile.EditMatrimonyProfileFragment">
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="@dimen/margin_32x"
+        android:visibility="gone"
+        android:layout_height="@dimen/margin_32x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/personalDetailsTV"
+        style="@style/TextView.Headline6.Lexend.SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:text="@string/edit_personal_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/padding_16x"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personalDetailsTV">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/zodiacSignTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/moon_sign"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/moonSignSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/zodiacSignTV" />
+
+            <TextView
+                android:id="@+id/starHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/star"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/moonSignSP" />
+
+            <Spinner
+                android:id="@+id/updateStarSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/starHintTV" />
+
+
+            <TextView
+                android:id="@+id/maritalStatusHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/marital_status"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateStarSP" />
+
+            <Spinner
+                android:id="@+id/updateMaritalStatusSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/maritalStatusHintTV" />
+
+
+            <TextView
+                android:id="@+id/educationHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/education"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateMaritalStatusSP" />
+
+            <Spinner
+                android:id="@+id/updateEducationSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/educationHintTV" />
+
+            <TextView
+                android:id="@+id/employedInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/employed_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateEducationSP" />
+
+            <Spinner
+                android:id="@+id/updateEmployedInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employedInHintTV" />
+
+            <TextView
+                android:id="@+id/countryLivingInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/country_living_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateEmployedInSP" />
+
+            <Spinner
+                android:id="@+id/updateCountryLivingInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/countryLivingInHintTV" />
+
+            <TextView
+                android:id="@+id/updateStateLivingInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/state_living_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateCountryLivingInSP" />
+
+            <Spinner
+                android:id="@+id/updateStateLivingInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateStateLivingInHintTV" />
+
+            <TextView
+                android:id="@+id/updateCityLivingInHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/city_living_in"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateStateLivingInSP" />
+
+            <Spinner
+                android:id="@+id/updateCityLivingInSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateCityLivingInHintTV" />
+
+
+            <TextView
+                android:id="@+id/motherTongueHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/mother_tongue"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateCityLivingInSP" />
+
+            <Spinner
+                android:id="@+id/updateMotherTongueSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/motherTongueHintTV" />
+
+
+            <TextView
+                android:id="@+id/physicalStatusHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/physical_status"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateMotherTongueSP" />
+
+            <Spinner
+                android:id="@+id/updatePhysicalStatusSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/physicalStatusHintTV" />
+
+
+            <TextView
+                android:id="@+id/bodyTypeHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/body_type"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updatePhysicalStatusSP" />
+
+            <Spinner
+                android:id="@+id/updateBodyTypeSP"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/size_45"
+                android:background="@drawable/spinner_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bodyTypeHintTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateAgeTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/age"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateBodyTypeSP">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateAgeED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="2"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateHeightTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/height_in_cm"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateAgeTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateHeightED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateWeightTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/weight_in_kgs"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateHeightTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateWeightED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/updateAnnualIncomeTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/annual_income"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateWeightTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateAnnualIncomeED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/familyTypeHintTV"
+                style="@style/TextView.Caption.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:layout_marginEnd="@dimen/padding_16x"
+                android:text="@string/family_type"
+                android:textColor="@color/hintBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateAnnualIncomeTL" />
+
+
+            <RadioButton
+                android:id="@+id/updateJointFamilyRB"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:checked="true"
+                android:text="Joint"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/familyTypeHintTV" />
+
+            <RadioButton
+                android:id="@+id/updateNuclearFamilyRB"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/padding_16x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:buttonTint="@color/lightBlue"
+                android:text="@string/nuclear"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toEndOf="@id/updateJointFamilyRB"
+                app:layout_constraintTop_toBottomOf="@id/familyTypeHintTV" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/familyStatusTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/family_status"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateNuclearFamilyRB">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateFamilyStatusED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ancestralOriginTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/ancestral_origin"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/familyStatusTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateAncestralOriginED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/assetsTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/assets"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ancestralOriginTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateAssetsED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/fatherOccupationTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/fathers_occupation"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/assetsTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateFatherOccupationED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/motherOccupationTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/mother_occupation"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fatherOccupationTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateMotherOccupationED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/parentsContactNumberTL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:hint="@string/parent_contact_number"
+                app:hintTextAppearance="@style/TextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/motherOccupationTL">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/updateParentsContactNumberED"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:textColor="@color/textBlack" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/aboutMyselfHintTV"
+                style="@style/TextView.Caption.Lexend.SemiBold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="@string/about_myself"
+                android:textAllCaps="true"
+                android:textColor="@color/textGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/parentsContactNumberTL" />
+
+            <EditText
+                android:id="@+id/updateAboutMyselfED"
+                style="@style/TextView.Body1.Lexend.Regular"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_150"
+                android:layout_marginTop="@dimen/padding_8x"
+                android:background="@drawable/grey_stroke_bg"
+                android:gravity="start"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:padding="@dimen/padding_12x"
+                android:textColor="@color/textBlack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutMyselfHintTV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/profileImageCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/updateAboutMyselfED">
+
+                <TextView
+                    android:id="@+id/chooseMediaTagTV"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24x"
+                    android:text="@string/choose_media"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/openGalleryTV"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_24x"
+                    android:layout_marginEnd="@dimen/margin_8x"
+                    android:text="@string/see_all"
+                    android:textColor="@color/lightBlue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/updateProfileImageRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chooseMediaTagTV" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/updateMatrimonyProfileBT"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/size_20"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:layout_marginBottom="@dimen/size_20"
+                    android:padding="@dimen/padding_16x"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/updateProfileImageRV" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

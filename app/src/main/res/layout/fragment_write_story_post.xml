@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ja.burhanrashid52.photoeditor.PhotoEditorView
+        android:id="@+id/photo_editor_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop" />
+    <RelativeLayout
+        android:id="@+id/toolbar_photo_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:background="#C4000000"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/img_photo_edit_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_cam_back" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true">
+
+            <ImageView
+                android:id="@+id/img_photo_edit_undo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_undo" />
+
+            <ImageView
+                android:id="@+id/img_photo_edit_redo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_redo" />
+
+            <ImageView
+                android:id="@+id/img_photo_edit_crop"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_cam_crop_rotate" />
+
+            <ImageView
+                android:id="@+id/img_photo_edit_stickers"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_cam_sticker" />
+
+            <ImageView
+                android:id="@+id/img_photo_edit_text"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_cam_text" />
+
+            <ImageView
+                android:id="@+id/img_photo_edit_paint"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_cam_draw" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.malkinfo.janataaapp.utitlis.statuspost.CropImage
+        android:id="@+id/cropImge"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/toolbar_photo_edit" />
+
+    <com.malkinfo.janataaapp.utitlis.statuspost.VerticalSlideColorPicker
+        android:id="@+id/color_picker_view"
+        android:layout_width="13dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/toolbar_photo_edit"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="25dp"
+        android:visibility="invisible"
+        app:defaultColor="@color/colorPrimary" />
+    <LinearLayout
+        android:id="@+id/postLL"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="25dp"
+        android:weightSum="2"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_weight="2"
+            android:id="@+id/dspcET"
+            android:background="@drawable/post_bg"
+            android:hint="Type somthing"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_width="0dp"
+            android:padding="15dp"
+            android:ems="200"
+            android:backgroundTint="#272727"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_photo_done"
+            android:layout_weight="1"
+            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_send"
+            app:tint="@color/white"/>
+
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_crop_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:visibility="gone"
+        android:src="@drawable/ic_done" />
+
+</RelativeLayout>

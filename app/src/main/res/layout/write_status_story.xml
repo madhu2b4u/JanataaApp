@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/writeStoryPostCV"
+        android:layout_width="@dimen/margin_64x"
+        android:layout_height="@dimen/margin_64x"
+        android:layout_marginStart="@dimen/padding_16x"
+        android:layout_marginTop="@dimen/margin_24x"
+        android:layout_marginBottom="@dimen/padding_16x"
+        android:src="@drawable/status"
+        android:background="#00000000"
+        app:civ_border_width="2dp"
+        app:civ_border_color="@color/green"/>
+
+</LinearLayout>

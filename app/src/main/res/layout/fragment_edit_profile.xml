@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.main.Profile.EditProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/halfCircleCL"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/width_200x"
+                android:background="@drawable/halfcircle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/editProfileTitleTV"
+                style="@style/TextView.Headline6.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_40x"
+                android:text="@string/edit_profile"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileIV"
+                android:layout_width="@dimen/height_120x"
+                android:layout_height="@dimen/height_120x"
+                android:layout_marginTop="@dimen/size_50"
+                android:background="@drawable/profile_iv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editProfileTitleTV" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/uploadPhotoCL"
+                android:layout_width="@dimen/size_40"
+                android:layout_height="@dimen/size_40"
+                android:background="@drawable/circlebg"
+                android:backgroundTint="@color/lightBlue"
+                app:layout_constraintBottom_toBottomOf="@id/profileIV"
+                app:layout_constraintEnd_toEndOf="@id/profileIV">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/camera"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/white" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/padding_16x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/uploadPhotoCL">
+
+                <TextView
+                    android:id="@+id/aadharCardNumberHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/aadhar_number"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/updateAadharCardNumberTV"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/line_bg"
+                    android:clickable="false"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aadharCardNumberHintTV" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fullNameTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:hint="@string/full_name"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateAadharCardNumberTV">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updateFullNameET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:textColor="@color/textBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/parentNameTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:hint="@string/mother_father_name"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fullNameTL">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updateParentNameET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/countryHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/country"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/parentNameTL" />
+
+                <Spinner
+                    android:id="@+id/updateCountrySP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/countryHintTV" />
+
+
+                <TextView
+                    android:id="@+id/stateHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/state"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateCountrySP" />
+
+                <Spinner
+                    android:id="@+id/updateStateSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/stateHintTV" />
+
+                <TextView
+                    android:id="@+id/districtHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/district"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateStateSP" />
+
+                <Spinner
+                    android:id="@+id/updateDistrictSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/districtHintTV" />
+
+                <TextView
+                    android:id="@+id/mandalHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/Mandal"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateDistrictSP" />
+
+                <Spinner
+                    android:id="@+id/updateMandalSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/mandalHintTV" />
+
+
+                <TextView
+                    android:id="@+id/tahsilVillageHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/tahsil_village"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateMandalSP" />
+
+                <Spinner
+                    android:id="@+id/updateVillageSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tahsilVillageHintTV" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/addressTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:hint="@string/address"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateVillageSP">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updateAddressET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pincodeTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:hint="@string/pincode"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/addressTL">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updatePinCodeET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/dobTL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:hint="@string/dob"
+                    app:hintTextAppearance="@style/TextInputLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/pincodeTL">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/updateDateOfBirthET"
+                        style="@style/TextView.Body1.Lexend.Regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:textColor="@color/textBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/bloodGroupHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/blood_group"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/dobTL" />
+
+                <Spinner
+                    android:id="@+id/updateBloodGroupSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bloodGroupHintTV" />
+
+                <TextView
+                    android:id="@+id/maritalStatusHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/marital_status"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateBloodGroupSP" />
+
+                <Spinner
+                    android:id="@+id/updateMaritalStatusSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/maritalStatusHintTV" />
+
+
+                <TextView
+                    android:id="@+id/employmentStateHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/employment_state"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateMaritalStatusSP" />
+
+                <Spinner
+                    android:id="@+id/updateEmploymentStateSP"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/spinner_bg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/employmentStateHintTV" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/workCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateEmploymentStateSP">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/updatePrivateWorkTL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:hint="@string/if_private_mention_work"
+                        android:visibility="gone"
+                        app:hintTextAppearance="@style/TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/updatePrivateWorkET"
+                            style="@style/TextView.Body1.Lexend.Regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColor="@color/textBlack" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/updateOtherWorkTL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/padding_16x"
+                        android:hint="@string/mention_other_work"
+                        android:visibility="gone"
+                        app:hintTextAppearance="@style/TextInputLayout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/updateOtherWorkET"
+                            style="@style/TextView.Body1.Lexend.Regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            android:textColor="@color/textBlack" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/casteHintTV"
+                    style="@style/TextView.Caption.Lexend.SemiBold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/caste"
+                    android:textAllCaps="true"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/workCL" />
+
+                <TextView
+                    android:id="@+id/updateCasteTV"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_45"
+                    android:background="@drawable/line_bg"
+                    android:clickable="false"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/casteHintTV" />
+
+                <TextView
+                    android:id="@+id/genderHintTV"
+                    style="@style/TextView.Caption.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/gender"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateCasteTV" />
+
+
+                <RadioButton
+                    android:id="@+id/updateMaleRB"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/male"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/genderHintTV" />
+
+                <RadioButton
+                    android:id="@+id/updateFemaleRB"
+                    style="@style/TextView.Body1.Lexend.Regular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:text="@string/female"
+                    app:layout_constraintStart_toEndOf="@id/updateMaleRB"
+                    app:layout_constraintTop_toBottomOf="@id/genderHintTV" />
+
+                <TextView
+                    android:id="@+id/identityCardTV"
+                    style="@style/TextView.Caption.Lexend.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:text="@string/aadhar_card"
+                    android:textColor="@color/hintBlack"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/updateFemaleRB" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/uploadAadharCardCL"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/identityCardTV">
+
+                    <ImageView
+                        android:id="@+id/frontAadhaarCardIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_200x"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/frontAadharCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8x"
+                        android:background="@drawable/corner_bg"
+                        android:padding="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/frontAadhaarCardIV">
+
+                        <TextView
+                            android:id="@+id/frontAadharCardTV"
+                            style="@style/TextView.Body2.Lexend.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/upload"
+                            android:text="@string/upload_front_aadhar_card"
+                            android:textAllCaps="true"
+                            android:textColor="@color/textBlack"
+                            android:gravity="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <ImageView
+                        android:id="@+id/backAadhaarCardIV"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_200x"
+                        android:layout_marginTop="@dimen/margin_8x"
+                        android:scaleType="fitXY"
+                        android:visibility="gone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/frontAadharCL" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/backAadharCL"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_8x"
+                        android:background="@drawable/corner_bg"
+                        android:padding="@dimen/padding_16x"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/backAadhaarCardIV">
+
+                        <TextView
+                            android:id="@+id/backAadharCardTV"
+                            style="@style/TextView.Body2.Lexend.Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/upload"
+                            android:text="@string/upload_back_aadhar_card"
+                            android:textAllCaps="true"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/updateProfileBT"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginBottom="@dimen/padding_16x"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:padding="@dimen/padding_16x"
+                    android:text="@string/submit"
+                    android:textAllCaps="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uploadAadharCardCL" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

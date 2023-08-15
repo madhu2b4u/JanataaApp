@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/groupPostCL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_16x">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/postUserIV"
+            android:layout_width="@dimen/margin_32x"
+            android:layout_height="@dimen/margin_32x"
+            android:src="@drawable/profile_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/postUserTV"
+            style="@style/TextView.Body2.Lexend.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:text="Username"
+            android:textColor="@color/textBlack"
+            app:layout_constraintStart_toEndOf="@id/postUserIV"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/postTimeTV"
+            style="@style/TextView.Headline7.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_8x"
+            android:text="5 min ago"
+            android:textColor="@color/textGrey"
+            app:layout_constraintStart_toEndOf="@id/postUserIV"
+            app:layout_constraintTop_toBottomOf="@id/postUserTV" />
+
+        <ImageView
+            android:id="@+id/moreOptionsIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:src="@drawable/more_option"
+            app:layout_constraintBottom_toBottomOf="@id/postUserIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/postUserIV" />
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/otherUserMoreOptionsIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:src="@drawable/more_option"
+            app:layout_constraintBottom_toBottomOf="@id/postUserIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/postUserIV" />
+
+        <TextView
+            android:id="@+id/postTV"
+            style="@style/TextView.Body1.Lexend.Regular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_16x"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+            android:textColor="@color/textBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postTimeTV" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/postLikeCL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/postTV">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/postImageRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <CheckBox
+                android:id="@+id/favouriteCB"
+                android:layout_width="@dimen/margin_24x"
+                android:layout_height="@dimen/margin_24x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:background="@drawable/favourite_selector"
+                android:button="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postImageRV" />
+
+            <TextView
+                android:id="@+id/likesCountTV"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_6x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="20 likes"
+                android:textColor="@color/hintGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/favouriteCB"
+                app:layout_constraintTop_toBottomOf="@id/postImageRV" />
+
+            <TextView
+                android:id="@+id/commentsCountTV"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="11 Comments"
+                android:textColor="@color/hintGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/viewsCountTV"
+                app:layout_constraintStart_toEndOf="@id/likesCountTV"
+                app:layout_constraintTop_toBottomOf="@id/postImageRV" />
+
+            <TextView
+                android:id="@+id/viewsCountTV"
+                style="@style/TextView.Body2.Lexend.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:text="137views"
+                android:textColor="@color/hintGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivShare"
+                app:layout_constraintStart_toEndOf="@id/commentsCountTV"
+                app:layout_constraintTop_toBottomOf="@id/postImageRV" />
+
+            <ImageView
+                android:id="@+id/ivShare"
+                android:layout_width="@dimen/margin_24x"
+                android:layout_height="@dimen/margin_24x"
+                android:layout_marginTop="@dimen/padding_16x"
+                android:src="@drawable/share"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/postImageRV" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_8x"
+        android:layout_below="@id/groupPostCL"
+
+        android:background="@color/lightGrey" />
+
+
+</RelativeLayout>

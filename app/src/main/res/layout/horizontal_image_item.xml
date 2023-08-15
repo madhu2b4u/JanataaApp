@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp"
+    android:background="@color/black"
+    app:cardUseCompatPadding="true">
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/height_350x"
+        android:layout_height="@dimen/height_450x">
+        <ImageView android:id="@+id/horizontalIV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/profile_iv"
+            android:visibility="gone"
+            android:scaleType="centerCrop"/>
+        <FrameLayout
+            android:id="@+id/framVidL"
+            android:visibility="gone"
+            android:background="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <VideoView
+                android:layout_gravity="center"
+                android:id="@+id/mVdPostVV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

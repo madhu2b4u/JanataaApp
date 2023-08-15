@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".views.main.community.CommunityGroupFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/groupHeaderCL"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/backIV"
+            android:layout_width="@dimen/margin_24x"
+            android:layout_height="@dimen/margin_24x"
+            android:layout_marginStart="@dimen/padding_16x"
+            android:layout_marginTop="@dimen/padding_16x"
+            android:layout_marginBottom="@dimen/padding_16x"
+            android:src="@drawable/back"
+           android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            app:tint="@color/textBlack" />
+
+            <LinearLayout
+                android:id="@+id/groupTitleCL"
+                android:orientation="horizontal"
+                android:weightSum="4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/backIV"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/margin_32x"
+                android:layout_marginBottom="@dimen/size_5"
+                android:padding="@dimen/size_5"
+                >
+
+                <TextView
+                    android:id="@+id/groupTitleTV"
+                    android:layout_weight="3"
+                    style="@style/TextView.Headline6.Lexend.SemiBold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/textBlack"
+                   />
+
+                    <ImageView
+                        android:layout_weight="1"
+                        android:id="@+id/arrowDownIV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow"
+                        app:tint="@color/textBlack" />
+                <ImageView
+                    android:id="@+id/groupMeetingIV"
+                    android:layout_weight="1"
+                    android:layout_width="@dimen/padding_27x"
+                    android:layout_height="@dimen/padding_27x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginBottom="@dimen/padding_16x"
+                    android:src="@drawable/group_meeting"
+                    />
+
+            </LinearLayout>
+
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notificationCountCL"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/margin_20x"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/TextView.Caption.Lexend.Regular"
+                android:layout_width="@dimen/padding_18x"
+                android:layout_height="@dimen/padding_18x"
+                android:background="@drawable/circlebg"
+                android:backgroundTint="@color/red"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/notificationIV"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/notificationIV" />
+
+            <ImageView
+                android:id="@+id/notificationIV"
+                android:layout_width="@dimen/padding_27x"
+                android:layout_height="@dimen/padding_27x"
+                android:src="@drawable/notification"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/commGroupV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/padding_8x"
+        android:layout_marginTop="@dimen/padding_16x"
+        android:background="@color/lightGrey"
+        android:layout_alignBottom="@+id/groupHeaderCL"
+        android:layout_centerInParent="true"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/groupHeaderCL">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/groupPostRV"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/noPostFoundTV"
+            style="@style/TextView.Body2.Lexend.Regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_post_found"
+            android:textColor="@color/textBlack"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/groupHeaderCL">
+
+        <FrameLayout
+            android:id="@+id/topSheetFL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.malkinfo.janataaapp.helpers.TopSheetBehavior">
+
+            <include layout="@layout/top_dialog_layout" />
+        </FrameLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

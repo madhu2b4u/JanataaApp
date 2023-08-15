@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/gery_button"
+    tools:context=".views.main.BloodGroupFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bloodToolbar"
+        android:layout_width="match_parent"
+        android:background="@color/red"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="@dimen/padding_16x"
+        app:layout_collapseMode="pin">
+
+
+        <TextView
+            android:id="@+id/bloodGroupHeaderTV"
+            style="@style/TextView.Headline6.Lexend.SemiBold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/janataa_blood_donation"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@+id/requestBloodIV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bloodToolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bloodGroupContentCL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/bloodRequestCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="pin">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/requestBloodCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/margin_24x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginBottom="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/margin_24x"
+                    android:fitsSystemWindows="true"
+                    app:cardCornerRadius="@dimen/margin_8x"
+                    app:cardUseCompatPadding="true"
+                    app:layout_collapseMode="parallax">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/requestBloodTV"
+                            style="@style/TextView.Body1.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_12x"
+                            android:text="@string/request_blood"
+                            android:textColor="@color/textBlack"
+                            app:layout_constraintEnd_toEndOf="@+id/locationET"
+                            app:layout_constraintStart_toStartOf="@+id/locationET"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/locationET"
+                            style="@style/TextView.Body1.Lexend.Regular"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/padding_12x"
+                            android:layout_marginTop="@dimen/margin_12x"
+                            android:layout_marginEnd="@dimen/padding_12x"
+                            android:fitsSystemWindows="true"
+                            android:background="@drawable/trans_croner_bg"
+                            android:backgroundTint="@color/lightGrey"
+                            android:drawableStart="@drawable/location"
+                            android:drawablePadding="@dimen/margin_4x"
+                            android:drawableTint="@color/textGrey"
+                            android:hint="@string/enter_your_location"
+                            android:imeOptions="actionDone"
+                            android:padding="@dimen/margin_12x"
+                            android:singleLine="true"
+                            android:textColor="@color/textBlack"
+                            android:textColorHint="@color/textGrey"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/requestBloodTV" />
+
+                        <Spinner
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_12x"
+                            android:padding="@dimen/margin_12x"
+                            android:paddingStart="26dp"
+                            android:background="@drawable/blood_group_spinner"
+                            app:layout_constraintStart_toStartOf="@+id/locationET"
+                            app:layout_constraintEnd_toEndOf="@+id/locationET"
+                            app:layout_constraintTop_toBottomOf="@+id/locationET"
+                            android:id="@+id/spinner"/>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/bloodRequestBT"
+                            style="@style/TextView.Body2.Lexend.Medium"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_12x"
+                            android:layout_marginBottom="@dimen/margin_12x"
+                            android:backgroundTint="@color/red"
+                            android:text="@string/request"
+                            android:textAllCaps="true"
+                            app:cornerRadius="@dimen/margin_4x"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/locationET"
+                            app:layout_constraintStart_toStartOf="@+id/locationET"
+                            app:layout_constraintTop_toBottomOf="@id/spinner" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/offerToolLL"
+                android:orientation="vertical"
+                android:elevation="@dimen/height_15x"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bloodRequestCard">>
+                <TextView
+                    style="@style/TextView.Body1.Lexend.Medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_16x"
+                    android:text="@string/best_offer"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintBottom_toTopOf="@id/myRequestRV"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <include
+                    layout="@layout/ban_slider_view"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_8x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:background="@color/lightGrey" />
+            </LinearLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/myRequestCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/semiLightBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/offerToolLL">
+
+                <TextView
+                    android:id="@+id/myRequestsTV"
+                    style="@style/TextView.Body1.Lexend.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_16x"
+                    android:text="@string/my_request"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintBottom_toTopOf="@id/myRequestRV"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/myRequestRV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/myRequestsTV" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recentRequestHeaderCL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/myRequestCL">
+
+                <TextView
+                    android:id="@+id/recentRequestsTV"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/padding_16x"
+                    android:text="@string/recent_requests"
+                    android:textColor="@color/textBlack"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/refreshRequestIV"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/refreshRequestIV"
+                    android:layout_width="@dimen/margin_24x"
+                    android:layout_height="@dimen/margin_24x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:src="@drawable/restart"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/filterBloodGroupIV"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    android:id="@+id/filterBloodGroupIV"
+                    android:layout_width="@dimen/margin_24x"
+                    android:layout_height="@dimen/margin_24x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:src="@drawable/filter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bloodGroupRequestRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recentRequestHeaderCL" />
+
+            <TextView
+                android:id="@+id/noBloodRequestTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_request_found"
+                android:textColor="@color/textBlack"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recentRequestHeaderCL" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/bloodEnableLayout"
+        layout="@layout/feature_enable_layout"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

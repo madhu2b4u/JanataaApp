@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/viewMoreBT"
+        style="@style/TextView.Body1.Lexend.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_16x"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingTop="@dimen/height_15x"
+        android:paddingBottom="@dimen/height_15x"
+        android:text="@string/view_more_posts"
+        android:textColor="@color/white"
+        app:cornerRadius="@dimen/margin_8x" />
+</RelativeLayout>

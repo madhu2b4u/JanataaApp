@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matrimonyFragment">
+
+
+    <fragment
+        android:id="@+id/matrimonyFragment"
+        android:name="com.malakinfo.janataacommunityapp.views.main.MatrimonyFragment"
+        tools:layout="@layout/fragment_matrimony"/>
+
+    <fragment
+        android:id="@+id/communityFragment"
+        android:name="com.malakinfo.janataacommunityapp.views.main.CommunityFragment"
+        tools:layout="@layout/fragment_community_chat"/>
+
+
+    <fragment
+        android:id="@+id/bloodGroupFragment"
+        android:name="com.malakinfo.janataacommunityapp.views.main.BloodGroupFragment"
+        tools:layout="@layout/fragment_blood_group"/>
+
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.malakinfo.janataacommunityapp.views.main.ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+</navigation>

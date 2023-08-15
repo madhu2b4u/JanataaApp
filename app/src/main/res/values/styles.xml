@@ -1,0 +1,252 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryVariant</item>
+        <item name="colorAccent">@color/onPrimary</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+
+    <!-- TextViewBase -->
+    <style name="TextView.Base" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <!-- Headline5 -> 24sp -->
+    <style name="TextView.Headline4" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline4
+        </item>
+        <item name="autoSizeMinTextSize">30sp</item>
+        <item name="autoSizeMaxTextSize">34sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Headline4.Lexend.Regular" parent="TextView.Headline4">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Headline4.Lexend.Medium" parent="TextView.Headline4">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Headline4.Lexend.SemiBold" parent="TextView.Headline4">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <!-- Headline5 -> 24sp -->
+    <style name="TextView.Headline5" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline5
+        </item>
+        <item name="autoSizeMinTextSize">20sp</item>
+        <item name="autoSizeMaxTextSize">24sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Headline5.Lexend.Regular" parent="TextView.Headline5">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Headline5.Lexend.Medium" parent="TextView.Headline5">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Headline5.Lexend.SemiBold" parent="TextView.Headline5">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+
+    <!-- Headline6 -> 20sp -->
+    <style name="TextView.Headline6" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="autoSizeMinTextSize">18sp</item>
+        <item name="autoSizeMaxTextSize">20sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Headline6.Lexend.Regular" parent="TextView.Headline6">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Headline6.Lexend.Medium" parent="TextView.Headline6">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Headline6.Lexend.SemiBold" parent="TextView.Headline6">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <!-- Body1 -> 16sp -->
+    <style name="TextView.Body3" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="autoSizeMinTextSize">16sp</item>
+        <item name="autoSizeMaxTextSize">18sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Body3.Lexend.Regular" parent="TextView.Body3">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Body3.Lexend.Medium" parent="TextView.Body3">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Body3.Lexend.SemiBold" parent="TextView.Body3">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+
+    <!-- Body1 -> 16sp -->
+    <style name="TextView.Body1" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="autoSizeMinTextSize">14sp</item>
+        <item name="autoSizeMaxTextSize">16sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+
+
+    <style name="TextView.Body1.Lexend.Regular" parent="TextView.Body1">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+
+    <style name="TextView.Body1.Lexend.Light" parent="TextView.Body1">
+        <item name="fontFamily">@font/lexend_light</item>
+    </style>
+
+    <style name="TextView.Body1.Lexend.Medium" parent="TextView.Body1">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Body1.Lexend.SemiBold" parent="TextView.Body1">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <style name="TextView.Body1.Lexend.Bold" parent="TextView.Body1">
+        <item name="fontFamily">@font/lexend_bold</item>
+    </style>
+
+    <!-- Body2 -> 14sp -->
+    <style name="TextView.Body2" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="autoSizeMinTextSize">12sp</item>
+        <item name="autoSizeMaxTextSize">14sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Body2.Lexend.Regular" parent="TextView.Body2">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Body2.Lexend.Medium" parent="TextView.Body2">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Body2.Lexend.SemiBold" parent="TextView.Body2">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <!-- caption -> 12sp -->
+    <style name="TextView.Caption" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="autoSizeMinTextSize">10sp</item>
+        <item name="autoSizeMaxTextSize">12sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Caption.Lexend.Regular" parent="TextView.Caption">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Caption.Lexend.Medium" parent="TextView.Caption">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Caption.Lexend.SemiBold" parent="TextView.Caption">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <!-- Headline6 -> 20sp -->
+    <style name="TextView.Headline7" parent="TextView.Base">
+        <item name="android:textAppearance">@style/TextAppearance.MaterialComponents.Caption
+        </item>
+        <item name="autoSizeMinTextSize">8sp</item>
+        <item name="autoSizeMaxTextSize">10sp</item>
+        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeStepGranularity">1dp</item>
+    </style>
+
+    <style name="TextView.Headline7.Lexend.Regular" parent="TextView.Headline7">
+        <item name="fontFamily">@font/lexend_regular</item>
+    </style>
+
+    <style name="TextView.Headline7.Lexend.Medium" parent="TextView.Headline7">
+        <item name="fontFamily">@font/lexend_medium</item>
+    </style>
+
+    <style name="TextView.Headline7.Lexend.SemiBold" parent="TextView.Headline7">
+        <item name="fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <style name="TextInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/lightBlue</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <style name="ReportHintInputLayout" parent="@android:style/TextAppearance">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/textGrey</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/lexend_semibold</item>
+    </style>
+
+    <style name="TopSheet_DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_out_from_top</item>
+        <item name="android:windowExitAnimation">@anim/slide_back_to_top</item>
+    </style>
+
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+    </style>
+
+    <style name="CustomSendCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/SendShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+
+    <style name="SendShapeAppearanceOverlay_card_custom_corners" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+    </style>
+    <style name="Circular">
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_viewProfile"
+        android:title="@string/view_profile"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_block"
+        android:title="@string/block"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_clear_chat"
+        android:title="@string/clear_chat"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_report_profile"
+        android:title="@string/report_profile"
+        app:showAsAction="never"/>
+
+</menu>

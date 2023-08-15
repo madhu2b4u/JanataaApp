@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1x"
+        android:background="@color/darkGrey"/>
+    <RelativeLayout
+        android:layout_marginTop="@dimen/size_5"
+        android:layout_marginBottom="@dimen/size_5"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/statusImgIV"
+            android:scaleType="centerCrop"
+            android:layout_centerInParent="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"/>
+
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:elevation="@dimen/height_10x"
+        android:background="#79000000"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/pulisherLiL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/discpTV"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:layout_marginStart="@dimen/size_5"
+            android:textStyle="normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/pulisherLiL"
+        android:orientation="vertical"
+        android:background="@color/semi_black_transparent"
+        android:elevation="@dimen/height_10x"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:weightSum="3"
+            android:layout_margin="@dimen/height_10x"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/pulisherImgCIV"
+                android:src="@drawable/profile_iv"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="2dp"/>
+            <LinearLayout
+                android:layout_weight="3"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginStart="15dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/pulishNameTV"
+                    android:text="@string/app_name"
+                    android:textSize="17sp"
+                    android:textStyle="bold|normal"
+                    android:textColor="#FCFFFF"
+                    android:textAlignment="viewStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/pulished_atTV"
+                    android:text="@string/app_name"
+                    android:textSize="11sp"
+                    android:textColor="#F4F4F4"
+                    android:layout_margin="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+<!--            <ImageView-->
+<!--                android:id="@+id/eidtMenu"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_margin="6dp"-->
+<!--                android:padding="2dp"-->
+<!--                android:src="@drawable/ic_menu"-->
+<!--                android:layout_width="35dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                app:tint="@color/white" />-->
+        </LinearLayout>
+        <jp.shts.android.storiesprogressview.StoriesProgressView
+            android:id="@+id/storiesSV"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_3x"
+            android:layout_marginBottom="@dimen/margin_8x"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:layout_gravity="top"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1x"
+        android:background="@color/darkGrey"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

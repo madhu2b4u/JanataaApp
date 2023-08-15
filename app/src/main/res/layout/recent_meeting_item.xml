@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/padding_16x">
+
+    <TextView
+        android:id="@+id/eventTitleTV"
+        style="@style/TextView.Body2.Lexend.SemiBold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event title"
+        android:textColor="@color/hintBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/eventTV"
+        style="@style/TextView.Body2.Lexend.Regular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6x"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor ut labore et dolore magna aliqua."
+        android:textColor="@color/textGrey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventTitleTV" />
+
+    <TextView
+        android:id="@+id/eventTimeTagTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:text="@string/held_on"
+        android:textColor="@color/textBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+    <TextView
+        android:id="@+id/meetingDateTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:textColor="@color/textGrey"
+        app:layout_constraintStart_toEndOf="@id/eventTimeTagTV"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+    <TextView
+        android:id="@+id/meetingAtTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:textColor="@color/textGrey"
+        android:text="at"
+        app:layout_constraintStart_toEndOf="@id/meetingDateTV"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+
+    <TextView
+        android:id="@+id/meetingStartTimeTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:textColor="@color/textGrey"
+        app:layout_constraintStart_toEndOf="@id/meetingAtTV"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+
+    <TextView
+        android:id="@+id/meetingToTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:textColor="@color/textGrey"
+        android:text="to"
+        app:layout_constraintStart_toEndOf="@id/meetingStartTimeTV"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+    <TextView
+        android:id="@+id/meetingEndTimeTV"
+        style="@style/TextView.Caption.Lexend.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_8x"
+        android:layout_marginStart="@dimen/margin_2x"
+        android:textColor="@color/textGrey"
+        app:layout_constraintStart_toEndOf="@id/meetingToTV"
+        app:layout_constraintTop_toBottomOf="@id/eventTV" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.launch.FeatureSelectionFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/joinNowTV"
+                style="@style/TextView.Headline6.Lexend.SemiBold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_40x"
+                android:gravity="center"
+                android:padding="@dimen/margin_4x"
+                android:text="@string/join_now"
+                android:textColor="@color/textBlue"
+                app:layout_constraintBottom_toTopOf="@id/titleTV"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/titleTV"
+                style="@style/TextView.Body2.Lexend.Regular"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8x"
+                android:gravity="center"
+                android:padding="@dimen/margin_4x"
+                android:text="@string/join_with_our_three_app_features_you_like"
+                android:textColor="@color/textGrey"
+                app:layout_constraintBottom_toTopOf="@id/featuresCL"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/joinNowTV" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/featuresCL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_16x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTV">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/communityChatCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/chatImageCV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/margin_8x"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+
+                                android:layout_width="@dimen/margin_32x"
+                                android:layout_height="@dimen/margin_32x"
+                                android:layout_margin="@dimen/size_20"
+                                android:src="@drawable/chat"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/communityChatTV"
+                        style="@style/TextView.Body1.Lexend.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_8x"
+                        android:gravity="start"
+                        android:padding="@dimen/margin_4x"
+                        android:text="@string/community_chat"
+                        android:textColor="@color/textGrey"
+                        app:layout_constraintBottom_toBottomOf="@id/chatImageCV"
+                        app:layout_constraintEnd_toStartOf="@id/communityChatCB"
+                        app:layout_constraintStart_toEndOf="@id/chatImageCV"
+                        app:layout_constraintTop_toTopOf="@id/chatImageCV" />
+
+                    <CheckBox
+                        android:id="@+id/communityChatCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@drawable/checkbox_selector"
+                        app:layout_constraintBottom_toBottomOf="@id/chatImageCV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/communityChatTV"
+                        app:layout_constraintTop_toTopOf="@id/chatImageCV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/communityView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:background="@color/lightGrey"
+                    app:layout_constraintTop_toBottomOf="@id/communityChatCL" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/matrimonyCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/communityView">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/matrimonyImageCV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/margin_8x"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+
+                                android:layout_width="@dimen/margin_32x"
+                                android:layout_height="@dimen/margin_32x"
+                                android:layout_margin="@dimen/size_20"
+                                android:src="@drawable/couple"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/matrimonyTV"
+                        style="@style/TextView.Body1.Lexend.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_8x"
+                        android:gravity="start"
+                        android:padding="@dimen/margin_4x"
+                        android:text="@string/matrimony"
+                        android:textColor="@color/textGrey"
+                        app:layout_constraintBottom_toBottomOf="@id/matrimonyImageCV"
+                        app:layout_constraintEnd_toStartOf="@id/matrimonyCB"
+                        app:layout_constraintStart_toEndOf="@id/matrimonyImageCV"
+                        app:layout_constraintTop_toTopOf="@id/matrimonyImageCV" />
+
+                    <CheckBox
+                        android:id="@+id/matrimonyCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@drawable/checkbox_selector"
+                        app:layout_constraintBottom_toBottomOf="@id/matrimonyImageCV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/matrimonyTV"
+                        app:layout_constraintTop_toTopOf="@id/matrimonyImageCV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/matrimonyView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/margin_1x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:background="@color/lightGrey"
+                    app:layout_constraintTop_toBottomOf="@id/matrimonyCL" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/bloodCL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/padding_16x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/matrimonyView">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/bloodImageCV"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="@dimen/margin_8x"
+                        app:cardUseCompatPadding="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+
+                                android:layout_width="@dimen/margin_32x"
+                                android:layout_height="@dimen/margin_32x"
+                                android:layout_margin="@dimen/size_20"
+                                android:src="@drawable/bloodgroup"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/bloodTV"
+                        style="@style/TextView.Body1.Lexend.Medium"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/margin_8x"
+                        android:gravity="start"
+                        android:padding="@dimen/margin_4x"
+                        android:text="@string/blood_donation"
+                        android:textColor="@color/textGrey"
+                        app:layout_constraintBottom_toBottomOf="@id/bloodImageCV"
+                        app:layout_constraintEnd_toStartOf="@id/bloodCB"
+                        app:layout_constraintStart_toEndOf="@id/bloodImageCV"
+                        app:layout_constraintTop_toTopOf="@id/bloodImageCV" />
+
+                    <CheckBox
+                        android:id="@+id/bloodCB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@drawable/checkbox_selector"
+                        app:layout_constraintBottom_toBottomOf="@id/bloodImageCV"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/bloodTV"
+                        app:layout_constraintTop_toTopOf="@id/bloodImageCV" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/joinBT"
+                    style="@style/TextView.Body2.Lexend.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/padding_16x"
+                    android:layout_marginTop="@dimen/margin_32x"
+                    android:layout_marginEnd="@dimen/padding_16x"
+                    android:layout_marginBottom="@dimen/padding_16x"
+                    android:alpha="0.5"
+                    android:clickable="false"
+                    android:padding="@dimen/padding_16x"
+                    android:text="Continue"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    app:cornerRadius="@dimen/margin_8x"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bloodCL" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
